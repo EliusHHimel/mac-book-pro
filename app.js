@@ -75,4 +75,6 @@ function promoApply() {
 
     promoInputField.value = '';
 
+
+
 }
