@@ -7,9 +7,6 @@ function extraMemoryPriceUpdate(memoryPrice) {
 function memoryConfiguration8GB(price) {
     extraMemoryPriceUpdate(price);
     calculateTotal('extra-memory-cost');
-
-    const memory16GB = document.getElementById('memory-8gb');
-    memory16GB.onclick = '';
 }
 
 function memoryConfiguration16GB(price) {
@@ -28,9 +25,6 @@ function extraStoragePriceUpdate(storagePrice) {
 function storageConfiguration(price) {
     extraStoragePriceUpdate(price);
     calculateTotal('extra-storage-cost');
-
-    const ssd256GB = document.getElementById('ssd-256GB');
-    ssd256GB.onclick = '';
 }
 function storageConfiguration512(price) {
     extraStoragePriceUpdate(price);
@@ -56,8 +50,6 @@ function deliveryChargeUpdate(charge) {
 function deliveryChargeFree(charge) {
     deliveryChargeUpdate(charge)
     calculateTotal('delivery-charge')
-    const deliveryWithCharge = document.getElementById('delivery-free');
-    deliveryWithCharge.onclick = '';
 }
 
 function deliveryCharge20USD(charge) {
@@ -71,8 +63,8 @@ function deliveryCharge20USD(charge) {
 // Calculate Total
 function calculateTotal(product) {
     const element = document.getElementById(product).innerText;
-    const total = document.getElementById('total-price').innerText;
-    const totalPrice = parseFloat(element) + parseFloat(total);
+    const bestPrice = document.getElementById('best-price').innerText;
+    const totalPrice = parseFloat(element) + parseFloat(bestPrice);
 
     document.getElementById('total-price').innerText = totalPrice;
     document.getElementById('total-after-promo').innerText = totalPrice;
