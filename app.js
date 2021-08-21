@@ -4,34 +4,48 @@ function extraMemoryPriceUpdate(memoryPrice) {
     extraMemoryCost.innerText = memoryPrice;
 }
 
-document.getElementById('memory-8gb').addEventListener('click', function () {
-    extraMemoryPriceUpdate(0);
+function memoryConfiguration8GB(price) {
+    extraMemoryPriceUpdate(price);
     calculateTotal('extra-memory-cost');
-})
 
-document.getElementById('memory-16gb').addEventListener('click', function () {
-    extraMemoryPriceUpdate(180)
+    const memory16GB = document.getElementById('memory-8gb');
+    memory16GB.onclick = '';
+}
+
+function memoryConfiguration16GB(price) {
+    extraMemoryPriceUpdate(price);
     calculateTotal('extra-memory-cost');
-})
+
+    const memory16GB = document.getElementById('memory-16gb');
+    memory16GB.onclick = '';
+}
 
 // Storage Section
 function extraStoragePriceUpdate(storagePrice) {
     const extraStorageCost = document.getElementById('extra-storage-cost');
     extraStorageCost.innerText = storagePrice;
 }
+function storageConfiguration(price) {
+    extraStoragePriceUpdate(price);
+    calculateTotal('extra-storage-cost');
 
-document.getElementById('ssd-256gb').addEventListener('click', function () {
-    extraStoragePriceUpdate(0);
+    const ssd256GB = document.getElementById('ssd-256GB');
+    ssd256GB.onclick = '';
+}
+function storageConfiguration512(price) {
+    extraStoragePriceUpdate(price);
     calculateTotal('extra-storage-cost');
-})
-document.getElementById('ssd-512gb').addEventListener('click', function () {
-    extraStoragePriceUpdate(100);
+
+    const ssd512GB = document.getElementById('ssd-512gb');
+    ssd512GB.onclick = '';
+}
+function storageConfiguration1TB(price) {
+    extraStoragePriceUpdate(price);
     calculateTotal('extra-storage-cost');
-})
-document.getElementById('ssd-1tb').addEventListener('click', function () {
-    extraStoragePriceUpdate(180);
-    calculateTotal('extra-storage-cost');
-})
+
+    const ssd1TB = document.getElementById('ssd-1tb');
+    ssd1TB.onclick = '';
+}
 
 // Delivery Charge Section
 function deliveryChargeUpdate(charge) {
@@ -39,15 +53,20 @@ function deliveryChargeUpdate(charge) {
     deliveryCharge.innerText = charge;
 }
 
-document.getElementById('delivery-free').addEventListener('click', function () {
-    deliveryChargeUpdate(0);
+function deliveryChargeFree(charge) {
+    deliveryChargeUpdate(charge)
     calculateTotal('delivery-charge')
-})
+    const deliveryWithCharge = document.getElementById('delivery-free');
+    deliveryWithCharge.onclick = '';
+}
 
-document.getElementById('delivery-20usd').addEventListener('click', function () {
-    deliveryChargeUpdate(20)
+function deliveryCharge20USD(charge) {
+    deliveryChargeUpdate(charge)
     calculateTotal('delivery-charge')
-})
+
+    const deliveryWithCharge = document.getElementById('delivery-20usd');
+    deliveryWithCharge.onclick = '';
+}
 
 // Calculate Total
 function calculateTotal(product) {
@@ -60,7 +79,7 @@ function calculateTotal(product) {
 }
 
 // Promocode Apply
-document.getElementById('promo-apply-btn').addEventListener('click', function () {
+function promoApply() {
     const promoInputField = document.getElementById('promocode-input');
     const promoCode = promoInputField.value;
     const previousTotal = document.getElementById('total-after-promo').innerText;
@@ -70,4 +89,8 @@ document.getElementById('promo-apply-btn').addEventListener('click', function ()
     }
 
     promoInputField.value = '';
-})
+
+    const element = document.getElementById('promo-apply-btn');
+    element.onclick = '';
+
+}
