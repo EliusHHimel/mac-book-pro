@@ -69,11 +69,10 @@ function promoApply() {
     const promodiscount = parseFloat(previousTotal) * 20 / 100;
     if (promoCode == 'stevekaku') {
         document.getElementById('total-after-promo').innerText = parseFloat(previousTotal) - promodiscount;
+        const element = document.getElementById('promo-apply-btn');
+        element.onclick = '';
     }
 
     promoInputField.value = '';
-
-    const element = document.getElementById('promo-apply-btn');
-    element.onclick = '';
 
 }
