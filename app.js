@@ -62,9 +62,12 @@ function deliveryCharge20USD(charge) {
 
 // Calculate Total
 function calculateTotal(product) {
-    const element = document.getElementById(product).innerText;
+    const extraMemoryPrice = document.getElementById('extra-memory-cost').innerText;
+    const extraStoragePrice = document.getElementById('extra-storage-cost').innerText;
+    const deliveryCharge = document.getElementById('delivery-charge').innerText;
+
     const bestPrice = document.getElementById('best-price').innerText;
-    const totalPrice = parseFloat(element) + parseFloat(bestPrice);
+    const totalPrice = parseFloat(extraMemoryPrice) + parseFloat(extraStoragePrice) + parseFloat(deliveryCharge) + parseFloat(bestPrice);
 
     document.getElementById('total-price').innerText = totalPrice;
     document.getElementById('total-after-promo').innerText = totalPrice;
