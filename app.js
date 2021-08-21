@@ -12,9 +12,6 @@ function memoryConfiguration8GB(price) {
 function memoryConfiguration16GB(price) {
     extraMemoryPriceUpdate(price);
     calculateTotal();
-
-    const memory16GB = document.getElementById('memory-16gb');
-    memory16GB.onclick = '';
 }
 
 // Storage Section
@@ -29,16 +26,10 @@ function storageConfiguration(price) {
 function storageConfiguration512(price) {
     extraStoragePriceUpdate(price);
     calculateTotal();
-
-    const ssd512GB = document.getElementById('ssd-512gb');
-    ssd512GB.onclick = '';
 }
 function storageConfiguration1TB(price) {
     extraStoragePriceUpdate(price);
     calculateTotal();
-
-    const ssd1TB = document.getElementById('ssd-1tb');
-    ssd1TB.onclick = '';
 }
 
 // Delivery Charge Section
@@ -55,9 +46,6 @@ function deliveryChargeFree(charge) {
 function deliveryCharge20USD(charge) {
     deliveryChargeUpdate(charge)
     calculateTotal()
-
-    const deliveryWithCharge = document.getElementById('delivery-20usd');
-    deliveryWithCharge.onclick = '';
 }
 
 // Calculate Total
